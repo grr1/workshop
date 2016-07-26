@@ -15,7 +15,7 @@ class Editor:
         self.win = GraphWin('Graphic Editor', 800, 800)
 
         # Make the window scaled
-        self.win.setCoords(0, 0, 10.0, 10.0)
+        self.win.setCoords(0, 0, 10, 10)
 
         # Create the buttons
         self.buttons = []
@@ -46,8 +46,50 @@ class Editor:
 
     # Create all buttons in the application
     def createButtons(self):
+        ##### Teacher 0 Add Button
         self.addButton("Line", self.newLine)
+        
+        ##### Teacher 1 Add Button
         self.addButton("Rectangle", self.newRectangle)
+        
+        ##### Teacher 2 Add Button
+        
+        ##### Teacher 3 Add Button
+        
+        ##### Teacher 4 Add Button
+        
+        ##### Teacher 5 Add Button
+        self.addButton("Happy Face", self.newHappyFace)
+        
+        ##### Teacher 6 Add Button
+        
+        ##### Teacher 7 Add Button
+        
+        ##### Teacher 8 Add Button
+        
+        ##### Teacher 9 Add Button
+        
+        ##### Teacher 10 Add Button
+        
+        ##### Teacher 11 Add Button
+        
+        ##### Teacher 12 Add Button
+        
+        ##### Teacher 13 Add Button
+        
+        ##### Teacher 14 Add Button
+        
+        ##### Teacher 15 Add Button
+        
+        ##### Teacher 16 Add Button
+        
+        ##### Teacher 17 Add Button
+        
+        ##### Teacher 18 Add Button
+        
+        ##### Teacher 19 Add Button
+        
+        ##### Teacher 20 Add Button
 
         colors = ["red", "blue", "green", "yellow", "pink", "brown"]
         for c in colors:
@@ -69,6 +111,8 @@ class Editor:
                     func(b.getLabel())
                     
     ##### Commands in the editor ####
+
+    ##### Entry for teacher 0 - New Figure    
     def newLine(self, cmd):
         print("---- New Line ----")
         
@@ -87,6 +131,8 @@ class Editor:
         # Add to list of figures
         self.figs.append(line)
 
+    ##### Entry for teacher 1 - New Figure  
+
     def newRectangle(self,cmd):
         print("---- New Rectangle ---")
         
@@ -102,6 +148,71 @@ class Editor:
 
         #Add to list of figures
         self.figs.append(rect)
+
+    ##### Entry for teacher 2 - New Figure  
+
+    ##### Entry for teacher 3 - New Figure  
+
+    ##### Entry for teacher 4 - New Figure  
+
+    ##### Entry for teacher 5 - New Figure
+    def newHappyFace(self,cmd):
+        print("New Happy Face...");
+        print("Press Center")
+        c1 = self.win.getMouse()
+
+        #Draw Face
+        circle = Circle(c1, 1)
+        circle.setFill("yellow")
+        circle.draw(self.win)
+
+        #Draw smile
+        mouth = Circle(Point(c1.x,c1.y-.3), .6);
+        mouth.setFill("black")
+        mouth.draw(self.win)
+        mouth2 = Circle(Point(c1.x,c1.y), .6);
+        mouth2.setFill("yellow")
+        mouth2.setOutline("yellow");
+        mouth2.draw(self.win)
+
+        #draw eyes
+        eye1 = Circle(Point(c1.x-.3,c1.y+.3), .2);
+        eye1.setFill("black")
+        eye1.draw(self.win)
+        eye2 = Circle(Point(c1.x+.3,c1.y+.3), .2);
+        eye2.setFill("black")
+        eye2.draw(self.win)
+
+ 
+    ##### Entry for teacher 6 - New Figure  
+
+    ##### Entry for teacher 7 - New Figure  
+
+    ##### Entry for teacher 8 - New Figure  
+
+    ##### Entry for teacher 9 - New Figure  
+
+    ##### Entry for teacher 10 - New Figure  
+
+    ##### Entry for teacher 11 - New Figure  
+
+    ##### Entry for teacher 12 - New Figure  
+
+    ##### Entry for teacher 13 - New Figure  
+
+    ##### Entry for teacher 14 - New Figure  
+
+    ##### Entry for teacher 15 - New Figure  
+
+    ##### Entry for teacher 16 - New Figure  
+
+    ##### Entry for teacher 17 - New Figure  
+
+    ##### Entry for teacher 18 - New Figure  
+
+    ##### Entry for teacher 19 - New Figure  
+        
+    ##### Entry for teacher 20 - New Figure  
 
     def setColor(self,cmd):
         print("Set Color to", cmd)
