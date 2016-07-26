@@ -58,6 +58,7 @@ class Editor:
         self.addButton("Rectangle", self.newRectangle)
         
         ##### Teacher 2 Add Button
+        self.addButton("House", self.house)
         
         ##### Teacher 3 Add Button
         
@@ -159,6 +160,29 @@ class Editor:
         self.figs.append(rect)
 
     ##### Entry for teacher 2 - New Figure  
+    def house(self,cmd):
+        print("Press Center")
+        c1 = self.win.getMouse()
+
+        #Create wall
+        wall = Rectangle(Point(c1.x-1,c1.y-1),Point(c1.x+1,c1.y+.5))
+        wall.setFill("black")
+        wall.draw(self.win)
+
+        #Create door
+        door = Rectangle(Point(c1.x-.4,c1.y),Point(c1.x,c1.y-1))
+        door.setFill("red")
+        door.draw(self.win)
+        
+        #Create circle window
+        cir = Circle(Point(c1.x+.6,c1.y-.3), .2)
+        cir.setFill("blue")
+        cir.draw(self.win)
+
+        #Create chimney
+        chimney = Rectangle(Point(c1.x-.8,c1.y+.5),Point(c1.x-.6,c1.y+.8))
+        chimney.setFill("black")
+        chimney.draw(self.win)
 
     ##### Entry for teacher 3 - New Figure  
 
