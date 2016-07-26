@@ -75,7 +75,7 @@ class Editor:
         ##### Teacher 9 Add Button
         
         ##### Teacher 10 Add Button
-        
+        self.addButton("Sad Face", self.SadFace)
         ##### Teacher 11 Add Button
         
         ##### Teacher 12 Add Button
@@ -182,6 +182,33 @@ class Editor:
         mouth2 = Circle(Point(c1.x,c1.y), .6);
         mouth2.setFill("yellow")
         mouth2.setOutline("yellow");
+        mouth2.draw(self.win)
+
+        #draw eyes
+        eye1 = Circle(Point(c1.x-.3,c1.y+.3), .2);
+        eye1.setFill("black")
+        eye1.draw(self.win)
+        eye2 = Circle(Point(c1.x+.3,c1.y+.3), .2);
+        eye2.setFill("black")
+        eye2.draw(self.win)
+
+    def SadFace(self,cmd):
+        print("Sad Face...");
+        print("Press Center")
+        c1 = self.win.getMouse()
+
+        #Draw Face
+        circle = Circle(c1, 1)
+        circle.setFill("blue")
+        circle.draw(self.win)
+
+        #Draw smile
+        mouth = Circle(Point(c1.x,c1.y-.3), .6);
+        mouth.setFill("black")
+        mouth.draw(self.win)
+        mouth2 = Circle(Point(c1.x,c1.y), .6);
+        mouth2.setFill("blue")
+        mouth2.setOutline("blue");
         mouth2.draw(self.win)
 
         #draw eyes
