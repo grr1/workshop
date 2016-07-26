@@ -77,7 +77,7 @@ class Editor:
         ##### Teacher 10 Add Button
         
         ##### Teacher 11 Add Button
-        
+        self.addButton("Happy Face", self.newPeteFace)
         ##### Teacher 12 Add Button
         
         ##### Teacher 13 Add Button
@@ -204,6 +204,32 @@ class Editor:
     ##### Entry for teacher 10 - New Figure  
 
     ##### Entry for teacher 11 - New Figure  
+def newPeteFace(self,cmd):
+        print("New Happy Face...");
+        print("Press Center")
+        c1 = self.win.getMouse()
+
+        #Draw Face
+        circle = Circle(c1, 1)
+        circle.setFill("red")
+        circle.draw(self.win)
+
+        #Draw smile
+        mouth = Circle(Point(c1.x,c1.y-.3), .6);
+        mouth.setFill("white")
+        mouth.draw(self.win)
+        mouth2 = Circle(Point(c1.x,c1.y), .6);
+        mouth2.setFill("red")
+        mouth2.setOutline("red");
+        mouth2.draw(self.win)
+
+        #draw eyes
+        eye1 = Oval(Point(c1.x-.3,c1.y+.2), .2);
+        eye1.setFill("white")
+        eye1.draw(self.win)
+        eye2 = Oval(Point(c1.x+.3,c1.y+.2), .2);
+        eye2.setFill("white")
+        eye2.draw(self.win)
 
     ##### Entry for teacher 12 - New Figure  
 
@@ -223,7 +249,7 @@ class Editor:
         
     ##### Entry for teacher 20 - New Figure  
 
-    def setColor(self,cmd):
+def setColor(self,cmd):
         print("Set Color to", cmd)
         self.color = cmd
 
