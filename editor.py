@@ -58,6 +58,7 @@ class Editor:
         self.addButton("Rectangle", self.newRectangle)
         
         ##### Teacher 2 Add Button
+        self.addButton("House", self.house)
         
         ##### Teacher 3 Add Button
         
@@ -76,13 +77,13 @@ class Editor:
         self.addButton("COYS", self.newTottenham)
         
         ##### Teacher 10 Add Button
-        
+        self.addButton("Sad Face", self.SadFace)
         ##### Teacher 11 Add Button
-        
+        self.addButton("Happy Face", self.newPeteFace)
         ##### Teacher 12 Add Button
         
         ##### Teacher 13 Add Button
-        
+        self.addButton("Oval", self.newOval)
         ##### Teacher 14 Add Button
         
         ##### Teacher 15 Add Button
@@ -160,6 +161,29 @@ class Editor:
         self.figs.append(rect)
 
     ##### Entry for teacher 2 - New Figure  
+    def house(self,cmd):
+        print("Press Center")
+        c1 = self.win.getMouse()
+
+        #Create wall
+        wall = Rectangle(Point(c1.x-1,c1.y-1),Point(c1.x+1,c1.y+.5))
+        wall.setFill("black")
+        wall.draw(self.win)
+
+        #Create door
+        door = Rectangle(Point(c1.x-.4,c1.y),Point(c1.x,c1.y-1))
+        door.setFill("red")
+        door.draw(self.win)
+        
+        #Create circle window
+        cir = Circle(Point(c1.x+.6,c1.y-.3), .2)
+        cir.setFill("blue")
+        cir.draw(self.win)
+
+        #Create chimney
+        chimney = Rectangle(Point(c1.x-.8,c1.y+.5),Point(c1.x-.6,c1.y+.8))
+        chimney.setFill("black")
+        chimney.draw(self.win)
 
     ##### Entry for teacher 3 - New Figure  
 
@@ -183,6 +207,33 @@ class Editor:
         mouth2 = Circle(Point(c1.x,c1.y), .6);
         mouth2.setFill("yellow")
         mouth2.setOutline("yellow");
+        mouth2.draw(self.win)
+
+        #draw eyes
+        eye1 = Circle(Point(c1.x-.3,c1.y+.3), .2);
+        eye1.setFill("black")
+        eye1.draw(self.win)
+        eye2 = Circle(Point(c1.x+.3,c1.y+.3), .2);
+        eye2.setFill("black")
+        eye2.draw(self.win)
+
+    def SadFace(self,cmd):
+        print("Sad Face...");
+        print("Press Center")
+        c1 = self.win.getMouse()
+
+        #Draw Face
+        circle = Circle(c1, 1)
+        circle.setFill("blue")
+        circle.draw(self.win)
+
+        #Draw smile
+        mouth = Circle(Point(c1.x,c1.y-.3), .6);
+        mouth.setFill("black")
+        mouth.draw(self.win)
+        mouth2 = Circle(Point(c1.x,c1.y), .6);
+        mouth2.setFill("blue")
+        mouth2.setOutline("blue");
         mouth2.draw(self.win)
 
         #draw eyes
@@ -225,11 +276,51 @@ class Editor:
     ##### Entry for teacher 10 - New Figure  
 
     ##### Entry for teacher 11 - New Figure  
+def newPeteFace(self,cmd):
+        print("New Happy Face...");
+        print("Press Center")
+        c1 = self.win.getMouse()
+
+        #Draw Face
+        circle = Circle(c1, 1)
+        circle.setFill("red")
+        circle.draw(self.win)
+
+        #Draw smile
+        mouth = Circle(Point(c1.x,c1.y-.3), .6);
+        mouth.setFill("white")
+        mouth.draw(self.win)
+        mouth2 = Circle(Point(c1.x,c1.y), .6);
+        mouth2.setFill("red")
+        mouth2.setOutline("red");
+        mouth2.draw(self.win)
+
+        #draw eyes
+        eye1 = Oval(Point(c1.x-.3,c1.y+.2), .2);
+        eye1.setFill("white")
+        eye1.draw(self.win)
+        eye2 = Oval(Point(c1.x+.3,c1.y+.2), .2);
+        eye2.setFill("white")
+        eye2.draw(self.win)
 
     ##### Entry for teacher 12 - New Figure  
 
     ##### Entry for teacher 13 - New Figure  
+    def newOval(self,cmd):
+            print("---- New Oval ---")
+            
+            print("Press Corner 1")
+            c1 = self.win.getMouse()
+            print("Press Corner 2")
+            c2 = self.win.getMouse()
 
+            #Create oval
+            ov = Oval(c1, c2)
+            ov.setFill(self.color)
+            ov.draw(self.win)
+
+            #Add to list of figures
+            self.figs.append(ov)
     ##### Entry for teacher 14 - New Figure  
 
     ##### Entry for teacher 15 - New Figure  
@@ -244,7 +335,7 @@ class Editor:
         
     ##### Entry for teacher 20 - New Figure  
 
-    def setColor(self,cmd):
+def setColor(self,cmd):
         print("Set Color to", cmd)
         self.color = cmd
 
