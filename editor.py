@@ -81,7 +81,7 @@ class Editor:
         ##### Teacher 12 Add Button
         
         ##### Teacher 13 Add Button
-        
+        self.addButton("Oval", self.newOval)
         ##### Teacher 14 Add Button
         
         ##### Teacher 15 Add Button
@@ -234,7 +234,21 @@ def newPeteFace(self,cmd):
     ##### Entry for teacher 12 - New Figure  
 
     ##### Entry for teacher 13 - New Figure  
+    def newOval(self,cmd):
+            print("---- New Oval ---")
+            
+            print("Press Corner 1")
+            c1 = self.win.getMouse()
+            print("Press Corner 2")
+            c2 = self.win.getMouse()
 
+            #Create oval
+            ov = Oval(c1, c2)
+            ov.setFill(self.color)
+            ov.draw(self.win)
+
+            #Add to list of figures
+            self.figs.append(ov)
     ##### Entry for teacher 14 - New Figure  
 
     ##### Entry for teacher 15 - New Figure  
