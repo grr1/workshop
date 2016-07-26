@@ -1,7 +1,7 @@
 
 # editor.py
 # This class implements a Graphical Editor
-#
+# 
 
 from graphics import *
 from button import Button
@@ -46,6 +46,11 @@ class Editor:
 
     # Create all buttons in the application
     def createButtons(self):
+        
+    #######################################################
+    ##### TODO 1: Find your slot and add your button ######
+    #######################################################
+        
         ##### Teacher 0 Add Button
         self.addButton("Line", self.newLine)
         
@@ -111,6 +116,10 @@ class Editor:
                     func(b.getLabel())
                     
     ##### Commands in the editor ####
+
+    ####################################################################
+    ##### TODO 2: Find your slot and add your new Figure function ######
+    ####################################################################
 
     ##### Entry for teacher 0 - New Figure    
     def newLine(self, cmd):
