@@ -73,6 +73,7 @@ class Editor:
         ##### Teacher 8 Add Button
         
         ##### Teacher 9 Add Button
+        self.addButton("COYS", self.newTottenham)
         
         ##### Teacher 10 Add Button
         
@@ -199,7 +200,27 @@ class Editor:
 
     ##### Entry for teacher 8 - New Figure  
 
-    ##### Entry for teacher 9 - New Figure  
+    ##### Entry for teacher 9 - New Figure
+    def newTottenham(self,cmd):
+        print("---- COYS = Come On Ye Spurs !!! ---")
+        
+        print("Press where you want the Spurs logo to display")
+        c1 = self.win.getMouse()
+
+           
+        print("Press where you want Harry Kane to display")
+        c2 = self.win.getMouse()
+        
+
+        # Create images
+        logo = Image(c1, "spurs.gif")
+        harry = Image(c2, "hk.gif")     
+        # Set the images
+        logo.draw(self.win)
+        harry.draw(self.win)
+        #Add to list of figures
+        self.figs.append(logo)
+        self.figs.append(harry)
 
     ##### Entry for teacher 10 - New Figure  
 
