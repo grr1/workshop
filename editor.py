@@ -79,6 +79,7 @@ class Editor:
         ##### Teacher 10 Add Button
         self.addButton("Sad Face", self.SadFace)
         ##### Teacher 11 Add Button
+        
         self.addButton("Happy Face", self.newPeteFace)
         ##### Teacher 12 Add Button
         
@@ -156,9 +157,6 @@ class Editor:
         rect = Rectangle(c1, c2)
         rect.setFill(self.color)
         rect.draw(self.win)
-
-        #Add to list of figures
-        self.figs.append(rect)
 
     ##### Entry for teacher 2 - New Figure  
     def house(self,cmd):
@@ -269,14 +267,11 @@ class Editor:
         # Set the images
         logo.draw(self.win)
         harry.draw(self.win)
-        #Add to list of figures
-        self.figs.append(logo)
-        self.figs.append(harry)
 
     ##### Entry for teacher 10 - New Figure  
 
     ##### Entry for teacher 11 - New Figure  
-def newPeteFace(self,cmd):
+    def newPeteFace(self,cmd):
         print("New Happy Face...");
         print("Press Center")
         c1 = self.win.getMouse()
@@ -296,10 +291,10 @@ def newPeteFace(self,cmd):
         mouth2.draw(self.win)
 
         #draw eyes
-        eye1 = Oval(Point(c1.x-.3,c1.y+.2), .2);
+        eye1 = Oval(Point(c1.x-.3,c1.y+.2), Point(c1.x-.3,c1.y+.2));
         eye1.setFill("white")
         eye1.draw(self.win)
-        eye2 = Oval(Point(c1.x+.3,c1.y+.2), .2);
+        eye2 = Oval(Point(c1.x+.3,c1.y+.2), Point(c1.x+.3,c1.y+.2));
         eye2.setFill("white")
         eye2.draw(self.win)
 
@@ -307,20 +302,18 @@ def newPeteFace(self,cmd):
 
     ##### Entry for teacher 13 - New Figure  
     def newOval(self,cmd):
-            print("---- New Oval ---")
+        print("---- New Oval ---")
             
-            print("Press Corner 1")
-            c1 = self.win.getMouse()
-            print("Press Corner 2")
-            c2 = self.win.getMouse()
+        print("Press Corner 1")
+        c1 = self.win.getMouse()
+        print("Press Corner 2")
+        c2 = self.win.getMouse()
 
-            #Create oval
-            ov = Oval(c1, c2)
-            ov.setFill(self.color)
-            ov.draw(self.win)
-
-            #Add to list of figures
-            self.figs.append(ov)
+        #Create oval
+        ov = Oval(c1, c2)
+        ov.setFill(self.color)
+        ov.draw(self.win)
+       
     ##### Entry for teacher 14 - New Figure  
 
     ##### Entry for teacher 15 - New Figure  
@@ -335,7 +328,7 @@ def newPeteFace(self,cmd):
         
     ##### Entry for teacher 20 - New Figure  
 
-def setColor(self,cmd):
+    def setColor(self,cmd):
         print("Set Color to", cmd)
         self.color = cmd
 
